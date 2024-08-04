@@ -25,7 +25,7 @@ def get_book(book_id):
         return jsonify({book_id: book})
     return {'error': '本が見つかりません'}, 404
 
-#Createメソッド
+# Createメソッド
 @app.route('/books', methods=['POST'])
 def create_book():
     # 新規作成時に既存idの最大数に1を追加する
@@ -37,7 +37,7 @@ def create_book():
     books[new_book['id']] = new_book
     return jsonify(new_book), 201
 
-# # Updateメソッド
+# Updateメソッド
 @app.route('/books/<int:book_id>', methods=['PUT'])
 def update_book(book_id):
     book = books.get(book_id)
@@ -47,7 +47,7 @@ def update_book(book_id):
         return jsonify(book)
     return jsonify({'error': '本が見つかりません'}), 404
 
-# # Deleteメソッド
+# Deleteメソッド
 @app.route('/books/<int:book_id>', methods=['DELETE'])
 def delete_book(book_id):
     if book_id in books:
