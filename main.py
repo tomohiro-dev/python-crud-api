@@ -28,7 +28,7 @@ def get_book(book_id):
 #Createメソッド
 @app.route('/books', methods=['POST'])
 def create_book():
-    # todo: マジックナンバーがあるのでコメントを追加する
+    # 新規作成時に既存idの最大数に1を追加する
     new_book = {
         'id': len(books)+1,
         'name': request.json['name'],
