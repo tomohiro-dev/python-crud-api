@@ -1,0 +1,10 @@
+# Ignore __pycache__ dir
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore flask app@ dir
+flaskapp/
+
+# others
+venv
